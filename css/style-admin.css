@@ -16,7 +16,6 @@ time, mark, audio, video {
     color: #fff;
 	font-size: 100%;
 	font-family:Arial, Helvetica, sans-serif;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -43,8 +42,8 @@ table {
 }
 header {
     position: fixed;
-    /* background: linear-gradient(to right, #cbb4d4, #20002c); */
-    background: linear-gradient(to right, #20002c, #cbb4d4);
+    /* background: linear-gradient(to right, #004e9a, #004e9a); */
+    background: linear-gradient(to right, #004e9a, #B9CEFF);
     width: 100%;
     height: 70px;
 }
@@ -61,7 +60,7 @@ header {
 }
 .logout_btn {
     padding: 5px;
-    background: #351640;
+    background: #004e9a;
     text-decoration: none;
     float: right;
     margin-top: -29px;
@@ -75,7 +74,7 @@ header {
 }
 .logout_btn1 {
     padding: 5px;
-    background: #351640;
+    background: #004e9a;
     text-decoration: none;
     float: right;
     margin-top: -29px;
@@ -89,22 +88,22 @@ header {
 }
 .logout_btn:hover {
     background: #fff;
-    color: #351640;
+    color: #004e9a;
 }
 .logout_btn1:hover {
     background: #fff;
-    color: #351640;
+    color: #004e9a;
 }
 .sidebar {
-    background: linear-gradient(to right, #20002c, #cbb4d4);
+    background: linear-gradient(to right, #004e9a, #B9CEFF);
     padding-top: 30px;
     margin-top: 70px;
     position: fixed;
     left:0;
     width: 250px;
-    height: 85%;
     transition: 0.5s;
     transition-property: left;
+    height: 100vh;
 }
 .sidebar .profile_image {
     width: 100px;
@@ -129,7 +128,7 @@ header {
     transition-property: background;
 }
 .sidebar a:hover{
-    background: linear-gradient(to right, #cbb4d4, #20002c);
+    background: linear-gradient(to right, #B9CEFF, #004e9a);
 }
 .sidebar span{
     padding-left: 20px;
@@ -169,11 +168,17 @@ label #sidebar_btn:hover {
 }
 .content {
     margin-left: 250px;
-    background: #684c73;
+    background: #004e9a;
     background-position: center;
     background-size: cover;
-    height: 94vh;
+    height:900px;
     transition: 0.5s;
+    word-wrap: break-word;
+}
+table 
+{
+    table-layout:fixed;
+    text-align: center;
 }
 #check:checked ~ .content {
     margin-left: 60px;
@@ -204,36 +209,36 @@ label #sidebar_btn:hover {
 }
 
 .info .col .right_1 {
-    max-width: 90px;
+    max-width: 100px;
     height: 50px;
     float: right;
     margin-right: 85px;
     margin-top: 15px;
-    border-left:3px double #351640;
+    border-left:3px double #004e9a;
     
 }
 .info .col .right_1 h4 {
-color: #000;
-text-align: center;
-text-transform: uppercase;
-font-weight: bold;
-}
-.info .col .right_1 p {
-    color: #351640;
-    margin-left: 85px;
-    margin-top: 10px;
+    display: inline-block;
+    color: #000;
+    text-transform: uppercase;
     font-weight: bold;
 }
+.info .col .right_1 p {
+    color: #004e9a;
+    margin-left: 70px;
+    margin-top: 10px;
+    font-weight: bold;
+} 
 .info hr {
     width: 88%;
     margin-left: 60px;
 }
 .btn-primary {
-    background-color: #351640;
+    background-color: #004e9a;
     border-color: #fff;
 }
 .btn-primary:hover{
-    color: #20002c;
+    color: #004e9a;
     background-color: #47065f;
     border-color: #fff;
 }
@@ -249,6 +254,7 @@ font-weight: bold;
     height: 40px;
     border-radius: 40px;
     padding: 0px;
+    position: fixed;
 }
 .search-btn {
     margin-left: 3px;
@@ -276,3 +282,4 @@ font-weight: bold;
     line-height: 40px;
     width: 0px;
 }
+

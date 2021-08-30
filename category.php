@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    error_reporting(0);
     if($_SESSION['email']==true) {
 
     }else {
@@ -10,10 +10,10 @@
     include('include/header1.php');
 ?>
 <div class="content">
-    <div style="width: 70%; margin-left: 15%;padding-top:6.5%;">
-        <div style="width:80%, margin-left:17%; margin-bottom:50px;">
+    <div style="width: 90%; margin-left: 5%;padding-top:6.5%;">
+        <div style="width:80%, margin-left:17%; margin-bottom:20px;">
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="admin-home.php">Admin Home</a></li>
+                    <li class="breadcrumb-item active"><a href="admin-home.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Category</li>
                 </ul>
         </div>
@@ -30,7 +30,16 @@
             </tr>
             <?php
                 include('db/connection.php');
-                $query=mysqli_query($conn,"select * from category");
+                $page=$_GET['page'];
+                if($page=="" || $page==1){
+                    $page1=0;
+                }
+                else{
+                    $page1=($page*3)-1;
+
+                }
+                $i = 0;
+                $query=mysqli_query($conn,"select * from category limit $page1,5");
                 while($row=mysqli_fetch_array($query)){
                     
             
@@ -44,6 +53,26 @@
                 </tr>
                 <?php } ?>
         </table>
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a href="#" class="page-link" >Pervious</a>
+            </li>
+            <?php
+
+            $sql=mysqli_query($conn,"select * from category");
+            $count=mysqli_num_rows($sql);
+            $a=$count/3;
+            ceil($a);
+            for ($b=1; $b <=$a ; $b++) { 
+            ?>
+            <li class="page-item"><a class="page-link" href="category.php?page=<?php echo $b;?>"><?php echo $b; ?></a></li>
+            <?php 
+            }
+            ?>
+            <li class="page-item disabled">
+                <a href="#" class="page-link" >Next</a>
+            </li>
+       </ul>
     </div>
 </div>
 

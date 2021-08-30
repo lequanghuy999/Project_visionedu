@@ -304,40 +304,48 @@
         <div class="container">
           <div class="row">
             <div class="col-4">
-              <img src="images/jpstudy-1.jpg" alt="">
-              <p class="h5">Thông báo khai giảng lớp tiếng nhật sơ cấp 1</p>
-              <p class="h6"><i class="fas fa-calendar-alt"></i> 26/10/2020 <i class="fas fa-eye"></i> 369 lượt xem</p>
-              <p class="h6">Sau thời gian tạm dừng do dịch bệnh, Du học Vision Edu tiếp tục tổ chức thêm lớp học tiếng Nhật tại Hà Nội giúp các bạn học sinh, sinh viên tiếp tục học tiếng và bổ sung các </p>
-              <button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>
-            </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Tin chính Du học Nhật Bản' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+              echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+              echo '<p class="h5">'.$row['title'].'</p>';
+              echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+              echo '<p class="h6">'.$row['description'].' </p>';
+              echo '<button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>';
+            echo '</div>';
+                  }
+                }
+            ?>
             <div class="col-4">
-              <div class="jp-news">
-                <img src="images/new2.png" alt="">
-                <div class="news-content">
-                  <p class="h5">Giới thiệu về trường ngoại ngữ hesed - trường nhật ngữ.</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 26/10/2020 <i class="fas fa-eye"></i> 369 lượt xem</p>
-                </div>
-                <p class="h6">Trường ngoại ngữ Hesed là trường Nhật ngữ được Bộ Tư Pháp Nhật Bản chứng nhận nhằm giúp sinh viên nước ngoài học tiếng Nhật</p>
-              </div>
-              <div class="jp-news">
-                <img src="images/news3.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Giới thiệu về trường ngoại ngữ hesed - trường nhật ngữ.</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 26/10/2020 <i class="fas fa-eye"></i> 369 lượt xem</p>
-                </div>
-                <p class="h6">Trường ngoại ngữ Hesed là trường Nhật ngữ được Bộ Tư Pháp Nhật Bản chứng nhận nhằm giúp sinh viên nước ngoài học tiếng Nhật</p>
-              </div>
-              <div class="jp-news" style="border-bottom: none;">
-                <img src="images/new4.jpeg" alt="">
-                <div class="news-content">
-                  <p class="h5">Giới thiệu về trường ngoại ngữ hesed - trường nhật ngữ.</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 26/10/2020 <i class="fas fa-eye"></i> 369 lượt xem</p>
-                </div>
-                <p class="h6">Trường ngoại ngữ Hesed là trường Nhật ngữ được Bộ Tư Pháp Nhật Bản chứng nhận nhằm giúp sinh viên nước ngoài học tiếng Nhật</p>
-              </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Du học Nhật Bản' LIMIT 3";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                  echo '<div class="jp-news">';
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    echo '<div class="news-content">';
+                      echo '<p class="h5">'.$row['title'].'</p>';
+                      echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+                    echo '</div>';
+                    echo '<p class="h6">'.$row['description'].'</p>';
+                  echo '</div>';
+                  }
+                }
+              ?>
             </div>
             <div class="col-4" style="width: 400px;">
-              <img src="images/jpstudy-5.gif" alt="">
+            <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Ảnh quảng cáo Du học Nhật Bản' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                  }
+                }
+            ?>
             </div>
           </div>
         </div>
@@ -381,33 +389,33 @@
               <button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>
             </div>
             <div class="col-4">
-              <div class="jp-news">
-                <img src="images/jpstudy-2.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Top 30 trường đại học hàn quốc lọt vào tầm ngắm của du học</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 05/11/2019 <i class="fas fa-eye"></i> 488 lượt xem</p>
-                </div>
-                <p class="h6">Nhắc đến Hàn Quốc, người Việt đã không còn xa lạ với: canh kim chi, rượu soju, áo hanbok... Nền giáo dục của đất nước này cũng</p>
-              </div>
-              <div class="jp-news">
-                <img src="images/krstudy-3.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học hàn quốc ngành ẩm thực - cơ hội việc làm và định cư</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 17/02/2020 <i class="fas fa-eye"></i> 745 lượt xem</p>
-                </div>
-                <p class="h6">Toàn bộ thủ tục, quá trình đăng kí du học bạn chỉ mất khoảng 150 đến 200 triệu đồng. Đây là một số khiêm tốn so với</p>
-              </div>
-              <div class="jp-news" style="border-bottom: none;">
-                <img src="images/krstudy-4.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Những điểm khác biệt của giáo dục hàn quốc</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 16/01/2020 <i class="fas fa-eye"></i> 278 lượt xem</p>
-                </div>
-                <p class="h6">Học sinh Hàn Quốc học 16 giờ một ngày, nghỉ một thứ bảy trong tháng, thường ăn tối ở trường cà vẫn phải chịu những hình phạt</p>
-              </div>
+            <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Du học Hàn Quốc' LIMIT 3";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                  echo '<div class="jp-news">';
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    echo '<div class="news-content">';
+                      echo '<p class="h5">'.$row['title'].'</p>';
+                      echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+                    echo '</div>';
+                    echo '<p class="h6">'.$row['description'].'</p>';
+                  echo '</div>';
+                  }
+                }
+              ?>
             </div>
             <div class="col-4" style="width: 400px;">
-              <img src="images/krstudy-5.gif" alt="">
+              <?php
+                $sql =  "SELECT * FROM news WHERE category = 'Ảnh quảng cáo Du học Hàn Quốc' LIMIT 1";
+                $result = mysqli_query($conn,$sql);
+                if(mysqli_num_rows($result) > 0) {
+                    while($row = mysqli_fetch_assoc($result)){
+                      echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    }
+                  }
+              ?>
             </div>
           </div>
         </div>
@@ -440,42 +448,50 @@
       </div>
       <div class="main-content">
         <div class="container">
-          <div class="row">
+        <div class="row">
             <div class="col-4">
-              <img src="images/gestudy-1.png" alt="">
-              <p class="h5">Các loại visa du học CHLB Đức</p>
-              <p class="h6"><i class="fas fa-calendar-alt"></i> 09/03/2020 <i class="fas fa-eye"></i> 858 lượt xem</p>
-              <p class="h6">Để được du hohc tại Đức hay bất kỳ quốc gia nào khác bạn đều phải có visa mới được phép nhập cảnh và ở lại. Theo luật cư trú của Đức vì Visa là một thủ tục bắt buộc đối với các</p>
-              <button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>
-            </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Tin chính Du học CHLB Đức' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+              echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+              echo '<p class="h5">'.$row['title'].'</p>';
+              echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+              echo '<p class="h6">'.$row['description'].' </p>';
+              echo '<button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>';
+            echo '</div>';
+                  }
+                }
+            ?>
             <div class="col-4">
-              <div class="jp-news">
-                <img src="images/gestudy-2.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học ngành cơ khí điện tử tại Đức - Bước chân ra khỏi tụt hậu</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 13/02/2020 <i class="fas fa-eye"></i> 840 lượt xem</p>
-                </div>
-                <p class="h6">Du học nghề cơ khí điện tử tại Đức là cơ hội để bạn làm việc với các công ty sản xuất hàng đầu của chính phử Đức như Siemen,</p>
-              </div>
-              <div class="jp-news">
-                <img src="images/gestudy-3.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học Đức: Con đường đại học và thạc sĩ của nhiều bạn trẻ</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 24/12/2019 <i class="fas fa-eye"></i> 759 lượt xem</p>
-                </div>
-                <p class="h6">Theo thống kê, Đức đứng thứ 3 thế giới về số lượng học sinh, sinh viên quốc tế đến nhập học, chỉ sau Mỹ và Anh. Với chất lượng đào tạo</p>
-              </div>
-              <div class="jp-news" style="border-bottom: none;">
-                <img src="images/gestudy-4.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học Đức vào top các trường đại học hot nhất 2019</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 29/11/2019 <i class="fas fa-eye"></i> 986 lượt xem</p>
-                </div>
-                <p class="h6">Trong năm 2018, CHLB ĐỨc có 26 trường đại học nằm trong bảng xếp hạng 250 trường tốt nhất thế giới của THE. và năm nay, con</p>
-              </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Du Học CHLB Đức' LIMIT 3";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                  echo '<div class="jp-news">';
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    echo '<div class="news-content">';
+                      echo '<p class="h5">'.$row['title'].'</p>';
+                      echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+                    echo '</div>';
+                    echo '<p class="h6">'.$row['description'].'</p>';
+                  echo '</div>';
+                  }
+                }
+              ?>
             </div>
             <div class="col-4" style="width: 400px;">
-              <img src="images/gestudy-5.gif" alt="">
+            <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Ảnh quảng cáo Du học CHLB Đức' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                  }
+                }
+            ?>
             </div>
           </div>
         </div>
@@ -508,44 +524,53 @@
       </div>
       <div class="main-content">
         <div class="container">
-          <div class="row">
+        <div class="row">
             <div class="col-4">
-              <img src="images/chinastudy-1.jpg" alt="">
-              <p class="h5">Kinh nghiệm du học Trung Quốc mà du học sinh cần nắm rõ</p>
-              <p class="h6"><i class="fas fa-calendar-alt"></i> 30/10/2020 <i class="fas fa-eye"></i> 162 lượt xem</p>
-              <p class="h6">Trung Quốc hiện là một trong những điểm đến hấp dẫn cho sinh viên nước ngoài, trong đó có Việt Nam. Nếu như nói ở các nước Phương Tây chi phí đi lại, tiêu dùng hàng ngày đắt</p>
-              <button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>
-            </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Tin chính Du học Trung Quốc' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+              echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+              echo '<p class="h5">'.$row['title'].'</p>';
+              echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+              echo '<p class="h6">'.$row['description'].' </p>';
+              echo '<button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>';
+            echo '</div>';
+                  }
+                }
+            ?>
             <div class="col-4">
-              <div class="jp-news">
-                <img src="images/chinastudy-2.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Muốn đi du học Trung Quốc cần đáp ứng điều kiện nào?</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 29/10/2020 <i class="fas fa-eye"></i> 215 lượt xem</p>
-                </div>
-                <p class="h6">Bạn có ý định và đang tìm hiểu về du học Trung Quốc nhưng chưa rõ về các điều kiện để có thể đi du học nước này. Hãy cùng Vision</p>
-              </div>
-              <div class="jp-news">
-                <img src="images/chinastudy-3.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">4/10 Trường đại học tốt nhất chân á thuộc về Trung Quốc</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 14/01/2020 <i class="fas fa-eye"></i> 693 lượt xem</p>
-                </div>
-                <p class="h6">Không thể phủ nhận một thực tế: giáo dục Trung Quốc với nền tảng chắc chắn từ xưa, công thêm việc nhanh nhạy với thời đại đã</p>
-              </div>
-              <div class="jp-news" style="border-bottom: none;">
-                <img src="images/chinastudy-4.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Điểm danh 24 trường đại học lớn nhất Trung Quốc khiến ai cũng</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 09/01/2020 <i class="fas fa-eye"></i> 664 lượt xem</p>
-                </div>
-                <p class="h6">Nếu có dịp ghé thăm 24 trường đại học dưới đây của Trung Quốc, chắc chắn các bạn sẽ không khỏi ngỡ ngàng, choáng ngợp trước</p>
-              </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Du Học Trung Quốc' LIMIT 3";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                  echo '<div class="jp-news">';
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    echo '<div class="news-content">';
+                      echo '<p class="h5">'.$row['title'].'</p>';
+                      echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+                    echo '</div>';
+                    echo '<p class="h6">'.$row['description'].'</p>';
+                  echo '</div>';
+                  }
+                }
+              ?>
             </div>
             <div class="col-4" style="width: 400px;">
-              <img src="images/chinastudy-5.gif" alt="">
+            <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Ảnh quảng cáo Du học Trung Quốc' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                  }
+                }
+            ?>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -576,44 +601,53 @@
       </div>
       <div class="main-content">
         <div class="container">
-          <div class="row">
+        <div class="row">
             <div class="col-4">
-              <img src="images/dailoanstudy-1.jpg" alt="">
-              <p class="h5">Du học Đài Loan trọn gói 55 triệu tại vision Edu</p>
-              <p class="h6"><i class="fas fa-calendar-alt"></i> 02/11/2020 <i class="fas fa-eye"></i> 289 lượt xem</p>
-              <p class="h6">Đài Loan là một trong những nước có nền giáo dục tiên tiến cới nhiều trường thuộc hàng top trên thế giới. Dù vậy nhưng Đài Loan cũng là một trong những quốc gia có mức học phí </p>
-              <button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>
-            </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Tin chính Du học Đài Loan' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+              echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+              echo '<p class="h5">'.$row['title'].'</p>';
+              echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+              echo '<p class="h6">'.$row['description'].' </p>';
+              echo '<button>Xem chi tiết <i class="fas fa-angle-double-right"></i></button>';
+            echo '</div>';
+                  }
+                }
+            ?>
             <div class="col-4">
-              <div class="jp-news">
-                <img src="images/dailoanstudy-2.png" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học Đài Loan và những điều cần biết</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 14/11/2019 <i class="fas fa-eye"></i> 603 lượt xem</p>
-                </div>
-                <p class="h6">Đài Loan là một hòn đảo xinh đẹp thuộc khu vực Đông Á, có khí hậu ôn hòa, nền ẩm thực phong phú và đa dạng cùng nhiều địa</p>
-              </div>
-              <div class="jp-news">
-                <img src="images/dailoanstudy-3.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Tuyển sinh du học Đài Loan năm 2020 cho tất cả các bậc học</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 10/10/2019 <i class="fas fa-eye"></i> 520 lượt xem</p>
-                </div>
-                <p class="h6">Đài Loan cung cấp cho sinh viên quốc tế các chương trình học đa dạng từ chương trình Ngôn ngữ, Đại học, Thạc Sỹ cho đến Tiến sỹ.</p>
-              </div>
-              <div class="jp-news" style="border-bottom: none;">
-                <img src="images/dailoanstudy-4.jpg" alt="">
-                <div class="news-content">
-                  <p class="h5">Du học Đài Loan và 3 điểm cộng không thể bỏ qua!</p>
-                  <p class="h6"><i class="fas fa-calendar-alt"></i> 09/10/2019 <i class="fas fa-eye"></i> 481 lượt xem</p>
-                </div>
-                <p class="h6">Hiện nay, du học Đài Loan hấp dẫn du học sinh không chỉ bởi học phí thấp, mà còn có khả năng xin được học bổng.</p>
-              </div>
+              <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Du Học Đài Loan' LIMIT 3";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                  echo '<div class="jp-news">';
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                    echo '<div class="news-content">';
+                      echo '<p class="h5">'.$row['title'].'</p>';
+                      echo '<p class="h6"><i class="fas fa-calendar-alt"></i> '.$row['date'].' <i class="fas fa-eye"></i> 369 lượt xem</p>';
+                    echo '</div>';
+                    echo '<p class="h6">'.$row['description'].'</p>';
+                  echo '</div>';
+                  }
+                }
+              ?>
             </div>
             <div class="col-4" style="width: 400px;">
-              <img src="images/dailoanstudy-5.gif" alt="">
+            <?php
+              $sql =  "SELECT * FROM news WHERE category = 'Ảnh quảng cáo Du học Đài Loan' LIMIT 1";
+              $result = mysqli_query($conn,$sql);
+              if(mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)){
+                    echo '<img src="images/'.$row['thumbnail'].'" alt="">';
+                  }
+                }
+            ?>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -636,7 +670,7 @@
                     <img src="images/feedback-3.jpg" alt="" style="width: 100%; height: 120px;">
                   </div>
                   <div class="col-12 col-lg-6" style="padding: 3px;">
-                    <video src="video/Vision Edu - Chương trình Lễ giới thiệu sản phẩm mới và tiễn bay du học sinh tháng 10_2019.mp4" muted loop autoplay></video>
+                    <video src="video/video.mp4" muted loop autoplay></video>
                     <p class="h6" style="margin-top: 10px;"><i class="fas fa-camera" style="margin-right:10px;"></i>Video hoạt động tại EduCareer Group</p>
                   </div>
                 </div>
@@ -690,40 +724,53 @@
           <div class="col-4">
             <div class="box-info">
               <div class="box-input">
-                <div></div>
-                <p style="color:#f9b60d;" class="h5">Đăng ký tư vấn du học</p>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-                  <input type="text" class="form-control" placeholder="Họ Tên" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-alt"></i></span>
-                  <input type="text" class="form-control" placeholder="Điện Thoại" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
-                  <input type="text" class="form-control" placeholder="Bạn sống ở thành phố nào" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                  <label class="input-group-text" for="inputGroupSelect01"><i class="fas fa-user-graduate"></i></label>
-                  <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Bạn muốn du học nước nào?</option>
-                    <option value="1">Du học Nhật Bản</option>
-                    <option value="2">Du học Hàn Quốc</option>
-                    <option value="3">Du học CHLB Đức</option>
-                    <option value="2">Du học Đài Loan</option>
-                    <option value="3">Du học Trung Quốc</option>
-                  </select>
-                </div>
-                </div>
-                
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
-                  <input type="text" class="form-control" placeholder="Thông tin tư vấn" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <button style="margin-left: 25px;width: 88%;margin-top:6px;background-color:#004e9a;border: 2px solid #fff;" type="submit" class="btn btn-primary bt-submit">Gửi thông tin</button>
+                <form method="post" enctype="multipart/form-data" name="adviseform" onsubmit=" return validateform() ">
+                  <p style="color:#f9b60d;" class="h5">Đăng ký tư vấn du học</p>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                    <input type="text" name="name_st" placeholder="Họ và Tên ..." class="form-control" id="email">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-alt"></i></span>
+                    <input type="text" name="phone" placeholder="Số điện thoại ..." class="form-control" id="email">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                    <input type="text" name="city" placeholder="Nơi ở hiện tại ..." class="form-control" id="email">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                    <input type="text" name="abroad" placeholder="Mong muốn du học ở đâu ..." class="form-control" id="email">
+                  </div>
+                  </div>
+                  
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-pencil-alt"></i></span>
+                    <input type="text" name="info" placeholder="Ghi chú thêm ..." class="form-control" id="email">
+                  </div>
+                  <input style="margin-left: 25px;width: 88%;margin-top:6px;background-color:#004e9a;border: 2px solid #fff;" type="submit" name="submit1" class="btn btn-primary bt-submit" value="Gửi thông tin">
+                  
+                </form>
+                <script>
+			
+                  function validateform(){
+                  var x = document.forms['adviseform']['name_st'].value;
+                  var y = document.forms['adviseform']['phone'].value;
+                  var z = document.forms['adviseform']['city'].value;
+                  var w = document.forms['adviseform']['abroad'].value;
+                  var w = document.forms['adviseform']['info'].value;
+                  if (x=="") {
+                      alert('Title Must Be Filled Out !');
+                      return false;
+                    }
+                    if (y=="") {
+                      alert('Description Must Be Filled Out !');
+                      return false;
+                    }
+                    
+                  }
+                </script>
               </div>
-              
             </div>
           </div>
         </div>
@@ -742,3 +789,21 @@
     <script src="js-bootstrap/bootstrap.js"></script>
   </body>
 </html>
+<?php
+    include('db/connection.php');
+    if(isset($_POST['submit1'])) {
+        $name_st  =$_POST['name_st'];
+        $phone    =$_POST['phone'];
+        $city     =$_POST['city'];
+        $abroad   =$_POST['abroad'];
+        $info     =$_POST['info']; 
+        $query1=mysqli_query($conn,"insert into advise(name_st,phone,city,abroad,info)values('$name_st','$phone','$city','$abroad','$info')");
+        if ($query1) {
+            echo "<script>alert('News upload Successfully !!')<script/>";
+        }else {
+            echo "<script>alert('Something wrong! Please try Again !!')<script/>";
+        }
+
+    }
+
+?>
